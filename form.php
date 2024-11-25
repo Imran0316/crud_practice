@@ -31,6 +31,7 @@
 
     if($run){
       echo "connect";
+      header("Location:display.php");
     }else{
       echo "not connected";
     }
