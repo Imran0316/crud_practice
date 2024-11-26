@@ -10,9 +10,23 @@
     <?php
     $connection =mysqli_connect("localhost","root","","patients");
     $sql_quer="SELECT * FROM pt_details";
+    if(isset($_GET["searchbtn"])){
+      $sql="SELECT * FROM pt_details WHERE id = " . $_GET["search"];
+    }
     $run=mysqli_query($connection,$sql_quer);
     if(mysqli_num_rows($run)>0){
     ?>
+    
+    <form action="" method="get">
+        <label for="">Search:</label>
+        <input type="number" value="0" require name="search">
+
+        <input type="submit" value="search" name="searchbtn">
+    </form>
+
+
+
+
     <table>
         <thead>
             <tr>
@@ -38,7 +52,7 @@
                 <td><?php echo $data['adress'] ;?></td>
 
                 <td><a href="edit.php?id=<?php echo $data['id'];  ?>">Edit</a></td>
-                <td><a href="">Delete</a></td>
+                <td><a href="delete.php?id=<?php echo $data['id'];  ?>">Delete</a></td>
             </tr>
             <?php }?>
         </tbody>

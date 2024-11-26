@@ -16,6 +16,7 @@
     ?>
     <form action="update.php" method="post">
     <input type="hidden" name="id" value="<?php echo $row['id'];?>">  <br>
+    <input type="text" name="name" value="<?php echo $row['patientname'];?>"> <br>
     <input type="email" name="email" value="<?php echo $row['email'];?>"> <br>
     <input type="tel" name="phone" value="<?php echo $row['phone'];?>"> <br>
     <input type="number" name="age" value="<?php echo $row['age'];?>"> <br>
